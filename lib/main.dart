@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_app/component/CustomButton.dart';
+import 'package:demo_flutter/component/CustomButton.dart';
 // 页面
 import 'views/base.dart';
 
