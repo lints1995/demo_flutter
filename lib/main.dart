@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:demo_flutter/component/CustomButton.dart';
 // 页面
 import 'views/base.dart';
+import 'views/routerQuery.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,6 +27,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Demo'),
+      routes: {
+        '/base': (context) => Base(),
+        '/routerQuery': (context) => RouterQuery(),
+      },
     );
   }
 }
@@ -62,15 +67,17 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        body: Wrap(
+          spacing: 10,
           children: [
             CustomButton(
-                text: '基本修饰',
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext ctx) => Base()));
-                }),
+              text: '基本修饰',
+              path: '/base',
+            ),
+            CustomButton(
+                text: '路由传参',
+                path: '/routerQuery',
+                arguments: {"name": '我是传递的参数'}),
           ],
         ));
   }
