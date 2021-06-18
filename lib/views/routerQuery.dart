@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // 路由传参
-class RouterQuery extends StatelessWidget {
+class PageRouterQuery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     dynamic args = ModalRoute.of(context).settings.arguments;
