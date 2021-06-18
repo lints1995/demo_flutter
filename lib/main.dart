@@ -55,30 +55,33 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    List buttonGroup = [
+      {
+        'text': '基本修饰',
+        'path': '/base',
+      },
+      {
+        'text': '路由传参',
+        'path': '/routerQuery',
+        'arguments': {"name": '我是传递的参数'},
+      }
+    ];
+    List<Widget> buttonWidgetList = []; //先建一个数组用于存放循环生成的widget
+    for (var item in buttonGroup) {
+      buttonWidgetList.add(
+        CustomButton(
+            text: item['text'],
+            path: item['path'],
+            arguments: item['arguments']),
+      );
+    }
     return Scaffold(
         appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
         body: Wrap(
           spacing: 10,
-          children: [
-            CustomButton(
-              text: '基本修饰',
-              path: '/base',
-            ),
-            CustomButton(
-                text: '路由传参',
-                path: '/routerQuery',
-                arguments: {"name": '我是传递的参数'}),
-          ],
+          children: buttonWidgetList,
         ));
   }
 }
