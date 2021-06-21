@@ -4,6 +4,7 @@ import 'package:demo_flutter/component/CustomButton.dart';
 import 'views/base.dart';
 import 'views/routerQuery.dart';
 import 'views/image.dart';
+import 'views/member.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/base': (context) => PageBase(),
         '/routerQuery': (context) => PageRouterQuery(),
-        '/image': (context) => PageImage()
+        '/image': (context) => PageImage(),
+        '/member': (context) => PageMember(),
       },
     );
   }
@@ -67,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
         'path': '/routerQuery',
         'arguments': {"name": '我是传递的参数'},
       },
-      {'text': '加载图片', 'path': '/image'}
+      {'text': '加载图片', 'path': '/image'},
+      {'text': '会员列表', 'path': '/member'},
     ];
     List<Widget> buttonWidgetList = []; //先建一个数组用于存放循环生成的widget
     for (var item in buttonGroup) {
