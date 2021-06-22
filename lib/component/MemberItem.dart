@@ -9,7 +9,7 @@ class MemberItem extends StatelessWidget {
 
   final String portrait;
   final String userName;
-  final Object phone;
+  final String phone;
 
   @override
   Widget build(BuildContext context) {
