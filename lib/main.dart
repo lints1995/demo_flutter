@@ -5,6 +5,7 @@ import 'views/base.dart';
 import 'views/routerQuery.dart';
 import 'views/image.dart';
 import 'views/member.dart';
+import 'views/noData.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/routerQuery': (context) => PageRouterQuery(),
         '/image': (context) => PageImage(),
         '/member': (context) => PageMember(),
+        '/no_data': (context) => PageNoData(),
       },
     );
   }
@@ -71,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
       },
       {'text': '加载图片', 'path': '/image'},
       {'text': '会员列表', 'path': '/member'},
+      {'text': '暂无数据', 'path': '/no_data'},
     ];
     List<Widget> buttonWidgetList = []; //先建一个数组用于存放循环生成的widget
     for (var item in buttonGroup) {
